@@ -24,9 +24,9 @@ public class BotConfig {
     @Bean
     public MyWizardTelegramBot MySuperTelegramBot() {
         DefaultBotOptions options = new DefaultBotOptions();
-        options.setProxyHost(proxyHost);
+/*        options.setProxyHost(proxyHost);
         options.setProxyPort(proxyPort);
-        options.setProxyType(proxyType);
+        options.setProxyType(proxyType);*/
 
         MyWizardTelegramBot mySuperTelegramBot = new MyWizardTelegramBot(options);
         mySuperTelegramBot.setBotUserName(botUserName);

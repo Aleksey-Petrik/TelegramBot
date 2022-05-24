@@ -48,8 +48,13 @@ public class MyWizardTelegramBot extends TelegramWebhookBot {
         if (update.getMessage() != null && update.getMessage().hasText()) {
             long chatId = update.getMessage().getChatId();
 
+            SendMessage message = new SendMessage();
+            message.setChatId(String.valueOf(chatId));
+            message.setText("Hi" + update.getMessage().getText());
+
             try {
-                execute(new SendMessage(String.valueOf(chatId), "Hi" + update.getMessage().getText()));
+                execute(new SendMessage(String.valueOf(chatId), "Привет моя любимка Варюшка " /*+ update.getMessage().getText()*/));
+                //execute(message);
             } catch (TelegramApiException e) {
                 e.printStackTrace();
             }
